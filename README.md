@@ -1,12 +1,13 @@
-# Detecció d’àrees cerebrals alterades en TEA, mitjançant segmentació automatitzada i aprenentatge profund d’imatges MRI
+<h1>
+   Detecció d’àrees cerebrals alterades en TEA, mitjançant segmentació automatitzada i aprenentatge profund d’imatges MRI
+</h1>
+Aquest repositori conté el codi en python desenvolupat pel projecte de final del Master de Bioinformàtica i Bioestadística de la UOC i la UB.
 
-Aquest repositori conté el codi en python desenvolupat pel projecte de final del Master de Bioinformàtic i Bioestadística de la UOC i la UB.
-
-La finalitat d’aquest projecte és detectar diferencies estructurals i patrons anòmals de desenvolupament cerebral en persones dins el trastorn de l’espectre autista (TEA), un trastorn del neurodesenvolupament sense causes específiques conegudes i sense biomarcadors objectius robusts. L’estudi s’aborda des d’una perspectiva neurocientífica amb el doble objectiu d’identificar possibles biomarcadors que puguin esdevenir dianes per a teràpies personalitzades i de desenvolupar un model d’intel·ligència artificial capaç de discriminar entre individus TEA i Control per facilitar el diagnòstic. Per dur a terme l’anàlisi es fan servir imatges de ressonància magnètica (RMI) del projecte [ABIDE II](https://fcon_1000.projects.nitrc.org/indi/abide/abide_II.html). La segmentació de les regions cerebrals s’ha realitzat amb [Synthseg](https://www.pnas.org/doi/10.1073/pnas.2216399120), una eina basada en xarxes neuronals convolucionals integrada dins el paquet FreeSurfer.
+L'objectiu és la detecció de diferencies estructurals i patrons anòmals de desenvolupament cerebral en persones dins el trastorn de l’espectre autista (TEA), un trastorn del neurodesenvolupament sense causes específiques conegudes i sense biomarcadors objectius robusts. Per a l’anàlisi es fan servir imatges de ressonància magnètica (RMI) del projecte [ABIDE II](https://fcon_1000.projects.nitrc.org/indi/abide/abide_II.html). La segmentació de les regions cerebrals s’ha realitzat amb [Synthseg](https://www.pnas.org/doi/10.1073/pnas.2216399120), una eina basada en xarxes neuronals convolucionals integrada dins el paquet FreeSurfer.
 
 ## 🧪 Laboratoris:
 
-Per a aquest projecte s'han seleccionat les dades dels següents laboratoris:
+Les imatges MRI d'aquest projecte provenen dels següents laboratoris:
 
 
 <table style="background:white;">
@@ -28,33 +29,6 @@ Per a aquest projecte s'han seleccionat les dades dels següents laboratoris:
 
 Les dades es poden descarregar a través de la plataforma [NITRC](http://www.nitrc.org/), per poder accedir-hi, cal registrar-se com a usuari a la plataforma.
 
-
-
-## 📁 Organització del codi
-
-## 🐍 Script inicial
-
-### `0_Organitzacio_dades.py`
-
-Script de Python pensat per executar-se en mode local. Serveix per estructurar les dades descarregades del projecte **ABIDE II**:
-
-- Extreu els arxius `anat.nii.gz` ubicats a `\\session_1\\anat_1\\` de cada subjecte.
-- Identifica cada imatge segons l’ID del subjecte.
-- Trasllada totes les imatges a una mateixa carpeta per automatitzar el processament posterior.
-
-
-
-<img width="1105" height="303" alt="estructurar dades" src="https://github.com/user-attachments/assets/c116a7bb-ad8c-4518-881a-888d310e1faa" />
-
-
-Aquest arxiu nomès fa falta si es vol executar les dades desde zero:
-
-1. descarregar dades dels laboratoris
-2. estructurar i renombrar arxius
-3. executar segmentacions amb *mri_synthseg* (executar la seqüència de processat amb freesurfer).
-
----
-
 ### 📂 Carpeta `CSV/`
 
 Conté tots els arxius necessaris per al correcte funcionament dels scripts:
@@ -72,7 +46,34 @@ Conté tots els arxius necessaris per al correcte funcionament dels scripts:
 
 ---
 
-### Seqüència de processat amb FreeSurfer
+## 🐍 Codi
+
+
+### 💻  `0_Organitzacio_dades.py`
+
+Script de Python pensat per executar-se en mode local. Serveix per estructurar les dades descarregades del projecte **ABIDE II**:
+
+- Extreu els arxius `anat.nii.gz` ubicats a `\\session_1\\anat_1\\` de cada subjecte.
+- Identifica cada imatge segons l’ID del subjecte.
+- Trasllada totes les imatges a una mateixa carpeta per automatitzar el processament posterior.
+
+
+
+<img width="1105" height="303" alt="estructurar dades" src="https://github.com/user-attachments/assets/c116a7bb-ad8c-4518-881a-888d310e1faa" />
+
+
+---
+Aquest arxiu nomès fa falta si es vol executar la segmentació:
+
+1. descarregar dades dels laboratoris
+2. estructurar i renombrar arxius
+3. executar segmentacions amb *mri_synthseg* (executar la seqüència de processat amb freesurfer).
+
+---
+
+
+
+### 🏄 Seqüència de processat amb FreeSurfer
 
 Els passos seguits per executar la comanda `recon-all` de FreeSurfer per al subjecte amb **ID = 29057** són:
 
@@ -106,13 +107,13 @@ Paràmetres:
 
 ---
 
-## 📓 Notebooks de Google Colab
+## <img src="https://colab.research.google.com/img/colab_favicon_256px.png" width="24"> Notebooks de Google Colab
 
 Els notebooks estant pensats per executar-se desde colab i poder reproduir els anàlisis sense modificar rutes, cal copiar la carpeta CSV a la mateixa carpeta del drive on s'estigui executant l'script.
 
-A la carpeta csv hi ha tots els arxius generats, es poden executar els colabs de manera saltada (es pot anar directe al 5 si interessa)
+A la carpeta csv hi ha tots els arxius generats, perquè es puguin executar els scripts de manera independent (es pot executar directament l’últim notebook sense necessitat d’haver executat els anteriors).
 
-### 1️⃣ **1_Dataset_Treball.ipynb**
+### ☁️ **1_Dataset_Treball.ipynb**
 
 Vincula els arxius generats per *mri_synthseg* amb les dades fenotípiques d’ABIDE II.
 
@@ -127,7 +128,7 @@ Vincula els arxius generats per *mri_synthseg* amb les dades fenotípiques d’A
 
 ---
 
-### 2️⃣ **2_QC_Dataset_Treball.ipynb**
+### ☁️ **2_QC_Dataset_Treball.ipynb**
 
 Control de qualitat de les dades i eliminació d’imatges incorrectes.
 
@@ -140,7 +141,7 @@ Control de qualitat de les dades i eliminació d’imatges incorrectes.
 
 ---
 
-### 3️⃣ **3_Harmonitzar_Dataset.ipynb**
+### ☁️ **3_Harmonitzar_Dataset.ipynb**
 
 Executa la harmonització per eliminar l’efecte de diferents escàners i protocols d’adquisició.
 
@@ -153,7 +154,7 @@ Executa la harmonització per eliminar l’efecte de diferents escàners i proto
 
 ---
 
-### 4️⃣ **4_Analysis.ipynb**
+### ☁️ **4_Analysis.ipynb**
 
 Anàlisi estadístic corresponent a la fase de *tècniques clàssiques*.
 
@@ -163,7 +164,7 @@ Anàlisi estadístic corresponent a la fase de *tècniques clàssiques*.
 
 ---
 
-### 5️⃣ **Avaluacio_Algoritmes.ipynb**
+### ☁️ **Avaluacio_Algoritmes.ipynb**
 
 Avaluació de diferents algoritmes de *Machine Learning* i selecció del més prometedor.
 
@@ -172,7 +173,7 @@ Avaluació de diferents algoritmes de *Machine Learning* i selecció del més pr
 
 ---
 
-### 6️⃣ **5_Analysis_ML.ipynb**
+### ☁️ **5_Analysis_ML.ipynb**
 
 Ajust del model de *Machine Learning* seleccionat.
 
@@ -181,7 +182,7 @@ Ajust del model de *Machine Learning* seleccionat.
 
 ---
 
-### 7️⃣ **6_CatBoost_OneOut.ipynb**
+### ☁️ **6_CatBoost_OneOut.ipynb**
 
 Validació de la capacitat de generalització del model mitjançant el mètode **Leave-One-Group-Out**.
 

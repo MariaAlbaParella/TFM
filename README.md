@@ -7,14 +7,18 @@ La finalitat d’aquest projecte és detectar diferencies estructurals i patrons
 ## 🧪 Laboratoris:
 
 Per a aquest projecte s'han seleccionat les dades dels següents laboratoris:
-<img width="204" height="177" alt="image" src="https://github.com/user-attachments/assets/9310d54d-18f3-4211-80c3-26aa7bb9b9e5" /> Barrow Neurological Institute
-<img width="200" height="54" alt="image" src="https://github.com/user-attachments/assets/2be25ba8-35f1-4d7d-a95b-84b8cdc70595" /> ETH Zürich
-<img width="385" height="150" alt="image" src="https://github.com/user-attachments/assets/de2cc907-bf16-4f5e-abe0-591a650139bf" /> Institut Pasteur and Robert Debré Hospital
-<img width="223" height="400" alt="image" src="https://github.com/user-attachments/assets/17346de4-f60e-4d0e-8f5a-51406e3b3849" /> Katholieke Universiteit Leuven
-<img width="300" height="175" alt="image" src="https://github.com/user-attachments/assets/ad60d5ab-cd9a-499e-abeb-1bcda00822cc" /> Olin Neuropsychiatry Research Center
-<img width="101" height="56" alt="image" src="https://github.com/user-attachments/assets/19227e4f-3743-4111-a6dc-c356fcc04a42" /> Trinity Centre for Health Sciences
-<img width="199" height="145" alt="image" src="https://github.com/user-attachments/assets/8d654f14-4d31-46e5-bf35-04769e351e24" /> San Diego State University
-<img width="231" height="234" alt="image" src="https://github.com/user-attachments/assets/7e16a2c3-421a-4d35-9719-0ee0cbd2a9c0" /> University of California Davis
+
+<img width="153" height="133" alt="image" src="https://github.com/user-attachments/assets/9310d54d-18f3-4211-80c3-26aa7bb9b9e5" />       
+<img width="200" height="54" alt="image" src="https://github.com/user-attachments/assets/2be25ba8-35f1-4d7d-a95b-84b8cdc70595" />       
+<img width="385" height="150" alt="image" src="https://github.com/user-attachments/assets/de2cc907-bf16-4f5e-abe0-591a650139bf" />       
+<img width="112" height="200" alt="image" src="https://github.com/user-attachments/assets/17346de4-f60e-4d0e-8f5a-51406e3b3849" />       
+<img width="225" height="131" alt="image" src="https://github.com/user-attachments/assets/ad60d5ab-cd9a-499e-abeb-1bcda00822cc" />         
+<img width="202" height="112" alt="image" src="https://github.com/user-attachments/assets/19227e4f-3743-4111-a6dc-c356fcc04a42" />         
+<img width="186" height="135" alt="image" src="https://github.com/user-attachments/assets/8d654f14-4d31-46e5-bf35-04769e351e24" />         
+<img width="173" height="175" alt="image" src="https://github.com/user-attachments/assets/7e16a2c3-421a-4d35-9719-0ee0cbd2a9c0" />          
+
+
+
 
 Les dades es poden descarregar a través de la plataforma [NITRC](http://www.nitrc.org/), per poder accedir-hi, cal registrar-se com a usuari a la plataforma.
 

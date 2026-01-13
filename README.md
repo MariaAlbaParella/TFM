@@ -29,14 +29,10 @@ Per a aquest projecte s'han seleccionat les dades dels següents laboratoris:
 Les dades es poden descarregar a través de la plataforma [NITRC](http://www.nitrc.org/), per poder accedir-hi, cal registrar-se com a usuari a la plataforma.
 
 
----
-title: "Organització del codi"
-output: github_document
----
 
-# 📁 Organització del codi
+## 📁 Organització del codi
 
-## 🐍 Script principal
+## 🐍 Script inicial
 
 ### `0_Organitzacio_dades.py`
 
@@ -46,6 +42,11 @@ Script de Python pensat per executar-se en mode local. Serveix per estructurar l
 - Identifica cada imatge segons l’ID del subjecte.
 - Trasllada totes les imatges a una mateixa carpeta per automatitzar el processament posterior.
 
+
+
+<img width="1105" height="303" alt="estructurar dades" src="https://github.com/user-attachments/assets/c116a7bb-ad8c-4518-881a-888d310e1faa" />
+
+
 Aquest arxiu nomès fa falta si es vol executar les dades desde zero:
 
 1. descarregar dades dels laboratoris
@@ -54,7 +55,7 @@ Aquest arxiu nomès fa falta si es vol executar les dades desde zero:
 
 ---
 
-## 📂 Carpeta `CSV/`
+### 📂 Carpeta `CSV/`
 
 Conté tots els arxius necessaris per al correcte funcionament dels scripts:
 
@@ -71,18 +72,37 @@ Conté tots els arxius necessaris per al correcte funcionament dels scripts:
 
 ---
 
-# Seqüència de processat amb FreeSurfer
+### Seqüència de processat amb FreeSurfer
 
 Els passos seguits per executar la comanda `recon-all` de FreeSurfer per al subjecte amb **ID = 29057** són:
 
-## 1. Configurar l’entorn de treball de FreeSurfer
+#### 1. Configurar l’entorn de treball de FreeSurfer
 
 ```bash
 export FREESURFER_HOME="/Applications/freesurfer/7.4.1"
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
+```
 
+#### 2. Establir la ruta de ```SUBJECTS_DIR
 
-AQUI EM QUEDO
+```bash
+export SUBJECTS_DIR=/Documents/TFM/test
+```
+
+#### 3. Executar segmentacions
+
+```bash
+mri_synthseg --i ABIDE_RAW \
+  --o ABIDE_DATA \
+  --qc qc_T1 \
+  --vol vol_T1.csv
+```
+Paràmetres:
+
+- `--i`: carpeta amb arxius a processar
+- `--o`: carpeta de sortida
+- `--qc`: puntuacions de control de qualitat en CSV
+- `--vol`: volums regionals en CSV
 
 ---
 
